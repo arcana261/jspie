@@ -1,0 +1,28 @@
+{
+  "name": "jspie",
+  "version": "0.1.0",
+  "description": "A project backbone bootstrapper based on node 4.5+ and swagger",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec ./tests",
+    "doc": "jsdoc -r -c ./.jsdocrc.json -d docs -R ./README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcana261/jspie.git"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "author": "Mohamad mehdi Kharatizadeh",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/arcana261/jspie/issues"
+  },
+  "homepage": "https://github.com/arcana261/jspie#readme",
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-config-google": "^0.6.0",
+    "jsdoc": "^3.4.1"
+  }
+}
