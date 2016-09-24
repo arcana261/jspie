@@ -3,7 +3,7 @@
 const statusCodes = require('../../lib/http/statusCodes');
 const expect = require('chai').expect;
 
-describe('JsPieStatusCodes', () => {
+describe('JsPieHttpStatusCodes', () => {
   describe('#literals()', () => {
     it('should be frozen', () => {
       expect(statusCodes).to.be.frozen;

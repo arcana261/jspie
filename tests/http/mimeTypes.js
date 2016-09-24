@@ -3,7 +3,7 @@
 const mimeTypes = require('../../lib/http/mimeTypes');
 const expect = require('chai').expect;
 
-describe('JsPieMimeTypes', () => {
+describe('JsPieHttpMimeTypes', () => {
   describe('#literals()', () => {
     it('should be frozen', () => {
       expect(mimeTypes).to.be.frozen;
