@@ -2,6 +2,8 @@
 
 const mimeTypes = require('../../lib/http/mimeTypes');
 const expect = require('chai').expect;
+const iterable = require('xcane').iterable;
+const type = require('xcane').type;
 
 describe('JsPieHttpMimeTypes', () => {
   describe('#literals()', () => {
@@ -27,6 +29,18 @@ describe('JsPieHttpMimeTypes', () => {
 
     it('should return correct value for jsPieData', () => {
       expect(mimeTypes.jsPieData).to.be.equal('application/x-jspi-data');
+    });
+  });
+
+  describe('#search()', () => {
+    it('should return all matching star search', () => {
+      expect(mimeTypes.search('text/*')).to.be.deep.equal(
+        iterable.from(Object.keys(mimeTypes))
+          .select(x => mimeTypes[x])
+          .where(x => type.isString(x))
+          .where(x => x.match('text/.*'))
+          .orderBy()
+          .toArray());
     });
   });
 });
