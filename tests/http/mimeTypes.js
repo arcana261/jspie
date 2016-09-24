@@ -1,6 +1,6 @@
 "use strict";
 
-const mimeTypes = require('../lib/response/mimeTypes');
+const mimeTypes = require('../../lib/http/mimeTypes');
 const expect = require('chai').expect;
 
 describe('JsPieMimeTypes', () => {

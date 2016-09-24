@@ -1,6 +1,6 @@
 "use strict";
 
-const statusCodes = require('../lib/response/statusCodes');
+const statusCodes = require('../../lib/http/statusCodes');
 const expect = require('chai').expect;
 
 describe('JsPieStatusCodes', () => {
