@@ -10,5 +10,7 @@ describe('JsPieHttpHeaders', () => {
       expect(headers.authorization).to.be.equal('authorization'));
     it('Accept-Langauge', () =>
       expect(headers.acceptLanguage).to.be.equal('accept-language'));
+    it('Accept', () =>
+      expect(headers.accept).to.be.equal('accept'));
   });
 });
