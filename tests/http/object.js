@@ -46,6 +46,29 @@ describe('JsPieHttpObject', () => {
       x.acceptLanguage = ['fa', 'ar'];
       expect(x.header(headers.acceptLanguage)).to.be.equal(
         'fa; q=1, ar; q=0.5');
+      x.header(headers.acceptLanguage, 'fr, de');
+      expect(x.acceptLanguage).to.be.deep.equal(['fr', 'de']);
+    });
+
+    it('should work with accept named header', () => {
+      expect(x.accept).to.be.undefined;
+      x.header(headers.accept, 'text/html; q=1.0, text/*; q=0.8, image/gif; q=0.6, image/jpeg; q=0.6, image/*; q=0.5, */*; q=0.1');
+      expect(x.accept).to.be.deep.equal(
+        ['text/html',
+         'text/plain',
+         'text/yaml',
+         'image/gif',
+         'image/jpeg',
+         'image/png',
+         'application/x-jspi-data',
+         'application/json']);
+      x.accept = 'text/yaml';
+      expect(x.header(headers.accept)).to.be.deep.equal('text/yaml; q=1');
+      x.accept = ['text/yaml', 'application/json'];
+      expect(x.header(headers.accept)).to.be.deep.equal(
+        'text/yaml; q=1, application/json; q=0.5');
+      x.header(headers.accept, 'image/gif, image/jpeg');
+      expect(x.accept).to.be.deep.equal(['image/gif', 'image/jpeg']);
     });
   });
 });
