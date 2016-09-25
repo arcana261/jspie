@@ -60,8 +60,9 @@ describe('JsPieHttpObject', () => {
          'image/gif',
          'image/jpeg',
          'image/png',
+         'application/json',
          'application/x-jspi-data',
-         'application/json']);
+         'application/xml']);
       x.accept = 'text/yaml';
       expect(x.header(headers.accept)).to.be.deep.equal('text/yaml; q=1');
       x.accept = ['text/yaml', 'application/json'];
