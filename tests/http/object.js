@@ -16,7 +16,6 @@ beforeEach(() => {
 describe('JsPieHttpObject', () => {
   describe('#constructor()', () => {
     it('should construct object correctly', () => {
-      expect(x.statusCode).to.be.equal(statusCodes.ok);
       expect(x.payload).to.be.null;
       expect(x.header()).to.be.deep.equal({});
     });
