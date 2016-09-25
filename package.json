@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "mime-types": "^2.1.11",
+    "mz": "^2.4.0",
     "xcane": "arcana261/xcane"
   }
 }
