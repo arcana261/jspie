@@ -30,6 +30,15 @@ describe('JsPieHttpMimeTypes', () => {
     it('should return correct value for jsPieData', () => {
       expect(mimeTypes.jsPieData).to.be.equal('application/x-jspi-data');
     });
+
+    it('should return correct value for gif', () =>
+      expect(mimeTypes.gif).to.be.equal('image/gif'));
+
+    it('should return correct value for jpeg', () =>
+      expect(mimeTypes.jpeg).to.be.equal('image/jpeg'));
+
+    it('should return correct value for png', () =>
+      expect(mimeTypes.png).to.be.equal('image/png'));
   });
 
   describe('#search()', () => {
