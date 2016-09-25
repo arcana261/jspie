@@ -42,5 +42,21 @@ describe('JsPieHttpMimeTypes', () => {
           .orderBy()
           .toArray());
     });
+
+    it('should return empty matching empty star search', () => {
+      expect(mimeTypes.search('none/*')).to.be.deep.equal([]);
+    });
+
+    it('should return empty on weird star search', () => {
+      expect(mimeTypes.search('te*')).to.be.deep.equal([]);
+    });
+
+    it('should return single item using single item search', () => {
+      expect(mimeTypes.search('text/html')).to.be.deep.equal(['text/html']);
+    });
+
+    it('should return empty on non-existing search', () => {
+      expect(mimeTypes.search('text/none')).to.be.deep.equal([]);
+    });
   });
 });
