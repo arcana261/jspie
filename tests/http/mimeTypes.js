@@ -67,5 +67,14 @@ describe('JsPieHttpMimeTypes', () => {
     it('should return empty on non-existing search', () => {
       expect(mimeTypes.search('text/none')).to.be.deep.equal([]);
     });
+
+    it('should return all known mime types through all search', () => {
+      expect(mimeTypes.search('*/*')).to.be.deep.equal(
+        iterable.from(Object.keys(mimeTypes))
+          .select(x => mimeTypes[x])
+          .where(x => type.isString(x))
+          .orderBy()
+          .toArray());
+    });
   });
 });
