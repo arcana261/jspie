@@ -27,6 +27,10 @@ describe('JsPieHttpMimeTypes', () => {
       expect(mimeTypes.text).to.be.equal('text/plain');
     });
 
+    it('should return correct value for xml', () => {
+      expect(mimeTypes.xml).to.be.equal('application/xml');
+    });
+
     it('should return correct value for jsPieData', () => {
       expect(mimeTypes.jsPieData).to.be.equal('application/x-jspi-data');
     });
